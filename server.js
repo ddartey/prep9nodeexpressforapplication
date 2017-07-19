@@ -1,4 +1,3 @@
-var express=require('express')
 var loggor=require("morgan")
 var bodyParser=require("body-parser")
 
@@ -14,7 +13,7 @@ app.set('views',__dirname+"/views")
 app.get('/',function(request, response) {
     response.render('home.ejs')
 })
-app.get('/',function(request, response) {
+app.get('/profile',function(request, response) {
     response.render('profile.ejs')
 })
 
@@ -23,7 +22,7 @@ app.get('/',function(request,response){
     console.log(request)
 })
 
-var port=procces.env.PORT
-app.listen(port,function({
-    console.log('App running on ${port} hamsters.)
-}))
+var port=process.env.PORT
+app.listen(port,function(){
+    console.log(`App running on ${port} hamsters`)
+})
